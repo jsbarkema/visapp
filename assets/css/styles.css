@@ -1,0 +1,8 @@
+body:before { 
+                            white-space: pre; 
+                            font-family: monospace; 
+                            content: 'Sass Syntax error: Undefined variable: \"$font-smoothing\". \A         on line 39 of \\Users\\jeffsb\\Sites\\visapp\\assets\\scss\\styles.scss \A '; } 
+                            
+                            body * { 
+                            display: none; 
+                            } 

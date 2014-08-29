@@ -1,0 +1,227 @@
+@charset "UTF-8";
+
+// Variables 
+
+$dark-grey: #383838;
+$medium-grey: #666; 
+$light-grey: #999;
+$blue: #8cbad7;
+$orange: #b16c2f;
+$creme: #dfddd1;
+$strong: "FiraSans-Medium", "Helvetica", Helvetica, Arial, sans-serif;
+$monospace: "FiraMono-Regular", "Helvetica", Helvetica, Arial, sans-serif;
+$alignright: right;
+$list-padding: 1em 1.125em;
+$list-background: #f9f9f9;
+
+
+// Mixins
+
+// Source Article: http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+ 
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin numbers {
+	font-family: $monospace;
+	text-align: right;
+}
+
+
+// Utility
+
+html {
+	-webkit-font-smoothing: $font-smoothing;
+}
+
+strong {
+	font-family: "FiraSans-Medium", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+table {
+	color: $medium-grey;
+	border: none;
+	
+	.title {
+		font-family: "FiraSans-Medium", "Helvetica", Helvetica, Arial, sans-serif;
+	}
+	
+	.numbers {
+		@include numbers;
+	}
+	
+	tr th {
+		background: #fff;
+	}
+}
+
+tr {
+	background: #f9f9f9;
+	
+	&:hover {
+		background-color: #efefee;
+	}
+}
+
+table tr.alt, table tr.even, table tr:nth-of-type(even) {
+	background: #f9f9f9;
+	
+	&:hover {
+		background-color: #efefee;
+	}
+}
+
+.page-wrap {
+	width: 100%;
+	max-width: 90em;
+	padding: 5em 2.5em;
+	margin: 0 auto;
+}
+
+.labels {
+	font-size: .875em;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 1em 0;
+	margin-bottom: 1em;
+	border-bottom: 1px dotted #999;
+	border-top: 1px dotted #999;
+	font-family: "FiraSans-Medium", "Helvetica", Helvetica, Arial, sans-serif;
+	color: $medium-grey;
+}
+
+.medium-1, large-1 {
+	border: 1px solid #ccc;
+}
+
+.guide-col {
+	padding: 1em 0;
+}
+
+.row {
+	margin-bottom: 2em;
+}
+
+.color-square {
+	width: 100%;
+	height: 4em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.panel {
+	border: none;
+	
+	h1,h2,h3,h4 {
+		color: $medium-grey;
+	}
+}
+
+.button {
+	background-color: $light-grey;
+}
+
+.button:hover {
+	background-color: $orange;
+}
+
+.login {
+	margin-top: 10em;
+	
+	a {
+		color: #fff;
+		text-transform: uppercase;
+	}
+}
+
+.avatar-large {
+	display: block;
+	height: 150px;
+	width: 150px;
+	border: 8px solid $creme; 
+	border-radius: 75px;
+	-moz-border-radius: 75px;
+	-webkit-border-radius: 75px;
+	
+	&.brett {
+		background: url('../img/avatar-brett.jpg') no-repeat center center;
+		background-size: 100%;	
+	}
+}
+
+.avatar-small {
+	display: block;
+	height: 76px;
+	width: 76px;
+	border: 6px solid $creme;
+	border-radius: 38px;
+	-moz-border-radius: 38px;
+	-webkit-border-radius: 38px;
+	
+	&.brett {
+		background: url('../img/avatar-brett.jpg') no-repeat center center;
+		background-size: 100%;
+	}
+}
+
+.main-list {
+	
+	li {
+		background: $list-background;
+		padding: $list-padding;
+		line-height: 1.125rem;
+		border-right: 2px solid #efefee;
+		margin-bottom: 2px;
+	}
+	
+	li.headings {
+		background: #fff;
+	}
+	
+	li:hover {
+		background: #f9f9f9;
+	}
+}
+
+
+// Colors
+
+.dark-grey {
+	background: $dark-grey;	
+}
+
+.medium-grey {
+	background: $medium-grey;	
+}
+
+.light-grey {
+	background: $light-grey;	
+}
+
+.orange {
+	background: $orange;	
+}
+
+.blue {
+	background: $blue; 
+}
+
+.creme {
+	background: $creme;		
+}
+
+
+@media #{$small-only} {
+	
+	.page-wrap {
+		padding: 1.25em 1em;
+	}	
+}
+
+
+

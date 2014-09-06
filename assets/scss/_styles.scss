@@ -1,0 +1,518 @@
+@charset "UTF-8";
+
+// Variables 
+
+$dark-grey: #383838;
+$medium-grey: #666; 
+$light-grey: #999;
+$blue: #679bbc;
+$orange: #b16c2f;
+$creme: #dfddd1;
+$strong: "FiraSans-Medium", "Helvetica", Helvetica, Arial, sans-serif;
+$monospace: "FiraMono-Regular", "Helvetica", Helvetica, Arial, sans-serif;
+$alignright: right;
+$list-padding: 1em 1.125em;
+$list-background: #f7f7f7;
+$body-bkg: #f0efe9;
+$button-disabled-opacity: 0.3;
+
+
+// Mixins
+
+// Source Article: http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+
+@mixin numbers {
+	font-family: $monospace;
+	text-align: right;
+}
+
+@mixin icons {	
+	list-style: none;
+	text-align: center;
+	display: inline-block;
+	margin-right: 2em;
+	font-size: 24px;
+}
+
+@mixin avatar-lrg {
+	display: block;
+	height: 106px;
+	width: 106px;
+	border: 6px solid $creme; 
+	border-radius: $global-rounded;
+	-moz-border-radius: $global-rounded;
+	-webkit-border-radius: $global-rounded;
+}
+
+@mixin avatar-med {
+	display: block;
+	height: 76px;
+	width: 76px;
+	border: 4px solid $creme;
+	border-radius: $global-rounded;
+	-moz-border-radius: $global-rounded;
+	-webkit-border-radius: $global-rounded;
+}
+
+@mixin avatar-sml {
+	display: block;
+	height: 42px;
+	width: 42px;
+	border: 2px solid $creme;
+	margin-top: 2.25em;
+	border-radius: $global-rounded;
+	-moz-border-radius: $global-rounded;
+	-webkit-border-radius: $global-rounded;
+}
+
+@mixin basic-padding($topbottom) {
+	padding-top: $topbottom;
+	padding-bottom: $topbottom;
+}
+
+@mixin transition {
+	-webkit-transition: background-color 300ms ease-out;
+	-moz-transition: background-color 300ms ease-out;
+	-o-transition: background-color 300ms ease-out;
+	transition: background-color 300ms ease-out;
+}
+
+
+// Utility
+
+html {
+	-webkit-font-smoothing: $font-smoothing;
+}
+
+body {
+	background: lighten($creme, 8);
+}
+
+strong {
+	font-family: "FiraSans-Medium", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+table {
+	color: $medium-grey;
+	border: none;
+	background: $body-bkg;
+	
+	.title {
+		font-family: "FiraSans-Medium", "Helvetica", Helvetica, Arial, sans-serif;
+	}
+	
+	.numbers {
+		@include numbers;
+	}
+	
+	tr th {
+		background: $body-bkg;
+		color: #666;
+	}
+	
+	tr td {
+		color: #666;
+	}
+}
+
+tr {
+	background: darken($body-bkg,4);
+		
+	&:hover {
+		background-color: darken($body-bkg,8);
+		@include transition;
+	}
+}
+
+table tr.alt, table tr.even, table tr:nth-of-type(even) {
+	background: darken($body-bkg,4);
+
+	
+	&:hover {
+		background-color: darken($body-bkg,8);
+	}
+}
+
+.list-nobkg {
+	background: $body-bkg;
+	padding: 0;
+}
+
+.page-wrap {
+	width: 100%;
+	/*max-width: 90em;*/
+	padding: 2.5em 0;
+	margin: 0 auto;
+}
+
+.labels {
+	font-size: 1.25em;
+	font-weight: 500;
+	text-transform: uppercase;
+	padding: 1em 0;
+	margin-bottom: 1em;
+	border-bottom: 1px dotted #999;
+	font-family: "FiraSans-Medium", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+.medium-1, large-1 {
+	border: 1px solid #ccc;
+}
+
+.guide-col {
+	padding: 1em 0;
+}
+
+.top-bar {
+	height: 7em;
+}
+
+.title-area {
+	width: 20%;
+	padding-top: 1em;
+}
+
+.top-bar-section {
+	
+	ul {
+		text-align: right;
+	}
+	
+	ul li {
+		background: none;
+	}
+	
+	ul li a {
+		margin-top: 2.15em;
+		font-size: 1em;
+	}
+	
+	ul li a.current {
+		color: $blue;
+	}
+}
+
+.name {
+	padding-top: 1.0em;
+	padding-left: 1.1em;
+	
+	h1 {
+		color: #fff;
+	}
+}
+
+.main-nav {
+	margin-left: 20em;
+	text-align: right;
+	margin-right: 2em;
+	
+	li a.icons {
+		margin-top: 1.55em !important;
+	}
+}
+
+.row {
+	margin-bottom: 2em;
+}
+
+.color-square {
+	width: 100%;
+	height: 4em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.panel {
+	border: none;
+	
+	h1,h2,h3,h4 {
+		color: $medium-grey;
+	}
+}
+
+.button {
+	background-color: $light-grey;
+}
+
+.button:hover {
+	background-color: $blue;
+}
+
+.avatar-large {
+	@include avatar-lrg;
+	
+	&.brett {
+		background: url('../img/avatar-brett.jpg') no-repeat center center;
+		background-size: 100%;	
+	}
+}
+
+.avatar-medium {
+	@include avatar-med;
+	
+	&.brett {
+		background: url('../img/avatar-brett.jpg') no-repeat center center;
+		background-size: 100%;
+	}
+}
+
+.avatar-small {
+	@include avatar-sml;
+	
+	&.brett {
+		background: url('../img/avatar-brett.jpg') no-repeat center center;
+		background-size: 100%;
+	}
+}
+
+.icons {
+	font-size: 24px !important;
+	text-align: left;
+	
+	li {
+		display: inline-block;
+		list-style: none;
+		padding: 0 1em;
+		text-align: center;
+	}	
+}
+
+.utility {
+	margin-left: 5em;
+	margin-right: 2em;
+	
+	li a {
+		padding: 0 0 0 15px !important;
+	}
+	
+	li a.icons {
+		margin-top: 1.55em !important;
+		color: $medium-grey;
+	}
+}
+
+
+// Login Logout
+
+.login {
+	background: #fff;
+	padding: 2.5em;
+	margin-top: 10em;
+	
+	a {
+		color: #fff;
+		text-transform: uppercase;
+	}
+	
+	.button {
+		margin: 0;
+	}
+}
+
+.login-logo {
+	background: #333;
+	padding: 1.5em 2.5em;
+}
+
+.login-bkg {
+	background: url('../img/bkg-temp.jpg') no-repeat $creme;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+}
+
+
+// Lists
+
+.list-checkbox {
+	width: 1em;	
+	background: $body-bkg;
+	padding-left: .875em;
+}
+
+.no-left {
+	padding: .5625rem 0;
+}
+
+.list-left-col {
+	padding: .5625rem 0;
+	width: 1.5em;
+}
+
+.list-nav {
+	float:left;
+	margin-left: 1em;
+	text-align: center;
+	padding-top: .1em;	
+}
+
+.list-stats {
+	padding: 1em;
+	border: 2px solid $orange;
+	margin-right: 1em;
+	width: 10em;
+	text-align: center;
+	
+	h1 {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.search-header {
+	@include basic-padding(4em);	
+}
+
+.search-bottom {
+	@include basic-padding(2em);
+	padding-left: 2.55em;
+}
+
+
+// Search Panels
+
+.search-panel-property {
+	@include panel(
+	    $bg:#fff, 				// Sets the panel background color. Default: $panel-pg
+	    $padding:2em,			// Sets the panel padding amount. Default: $panel-padding
+	    $adjust:true			// Sets the font color based on the darkness of the bg & resets header line-heights for panels. Default: $panel-header-adjust
+	);
+		
+	border: none;
+	color: $medium-grey;
+	min-height: 17em;
+  
+	h3, li {
+		color: $medium-grey;
+	}
+	
+	h5 {
+		font-size: 1.5rem;
+		color: $medium-grey;
+	}
+	
+	ul {
+		margin-left: 0;
+	}
+	
+	li {
+		list-style: none; 
+	}
+}
+
+.search-panel-brokers,
+.search-panel-industrial {
+	@include panel(
+	    $bg:#fff, 				// Sets the panel background color. Default: $panel-pg
+	    $padding:2em,			// Sets the panel padding amount. Default: $panel-padding
+	    $adjust:true			// Sets the font color based on the darkness of the bg & resets header line-heights for panels. Default: $panel-header-adjust
+	);
+	
+	border: none;
+	color: $medium-grey;
+	min-height: 17em;
+	
+	h3, li {
+		color: $medium-grey;
+	}
+	
+	h5 {
+		font-size: 1.5rem;
+		color: $medium-grey;
+	}
+	
+	ul {
+		margin-left: 0;
+	}
+	
+	li {
+		list-style: none; 
+	}	
+}
+
+.panel-header-property,
+.panel-header-brokers {
+	
+	ul {
+		margin-left: 0;
+		margin-bottom: 0;
+	}
+	
+	ul li {
+		display: inline-block;
+	}
+	
+	img {
+		vertical-align: baseline;
+		margin-right: .75em;
+	}
+}
+
+.ss-list {
+	position: relative;
+	
+	&::before {
+		position: absolute;
+		left: 9px;
+		top: 5px;
+	}
+}
+
+.list-tiny-links {
+	padding: .5em .75em;
+	background: $orange;
+	color: #fff;
+	font-size: .875em;
+	border-radius: $global-rounded;
+	font-family: "FiraSans-Medium", "Helvetica", Helvetica, Arial, sans-serif;
+	
+	&:hover {
+		color: #fff;
+		background: darken($orange, 7);
+		@include transition;
+	}
+	
+	&.lists {
+		padding-left: 2.1em;
+	}
+	
+	&.disabled {
+		visibility: hidden;
+	}
+}
+
+
+
+// Colors
+
+.dark-grey {
+	background: $dark-grey;	
+}
+
+.medium-grey {
+	background: $medium-grey;	
+}
+
+.light-grey {
+	background: $light-grey;	
+}
+
+.orange {
+	background: $orange;	
+}
+
+.blue {
+	background: $blue; 
+}
+
+.creme {
+	background: $creme;		
+}
+
+
+@media #{$small-only} {
+	
+	.page-wrap {
+		padding: 1.25em 1em;
+	}	
+}

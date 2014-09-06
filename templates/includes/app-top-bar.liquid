@@ -1,0 +1,24 @@
+<div class="contain-to-grid sticky">	
+	<div class="top-bar" data-topbar>
+		<ul class="title-area">
+	    	<li class="name"><a href="/"><h1>Logo</h1></a></li>
+			<li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+		</ul>
+		<div class="top-bar-section">
+			<div class="utility right">
+				<ul>
+					<li class="avatar-small brett"><a href="#"></a></li>
+					<li><a href="#" class="ss-settings icons"></a></li>
+					<li><a href="#" class="ss-logout icons"></a></li>
+				</ul>
+			</div>
+			<ul class="main-nav right">
+				<li><a href="#" {% if mixture.url == "dashboard" %}class="top-bar-section ul li>a current" {% endif %}>Dashboard</a></li>
+				<li><a href="#" {% if mixture.url == "create-list" %}class="top-bar-section ul li>a current" {% endif %}>Create List</a></li>
+				<li><a href="#" {% if mixture.url == "users" %}class="top-bar-section ul li>a current" {% endif %}>Users</a></li>
+				<li><a href="#" {% if mixture.url == "import" %}class="top-bar-section ul li>a current" {% endif %}>Import</a></li>
+				<li><a href="#" class="ss-search icons" {% if mixture.url == "search" %}class="top-bar-section ul li>a current" {% endif %}></a></li>
+			</ul>
+		</div>
+	</div><!-- End top-bar -->
+</div><!-- End contain-to-grid -->
